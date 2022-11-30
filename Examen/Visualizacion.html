@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <meta charset="utf-8">
+    <title>Sub 4-minute mile</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <h1 id="principal">Atletas Sub-4 en la milla</h1>
+    <p>
+      Correr una milla(1609m) en menos de 4 minutos, cada vuelta a la pista de atletismo en algo menos de 1 minuto,
+      es una proeza que durante decadas se consideró imposible. Sin embargo, en 1954 Roger Bannister, despues de miles
+      de intentos de quienes le precedieron, logró romper esta mítica barrera con un crono de 3:59.4 (<a target="_blank" href="https://www.youtube.com/watch?v=wTXoTnp_5sI">video</a>). Desde entonces los 
+      registros no han hecho más que mejorar, y en la actualidad el récord mundial se encuentra en 3:43.13, logrado por
+      Hichaam El Guerrouj en 1999. Al día de hoy 1459 personas han logrado superar esta marca según los registros de 
+      la federación internacional de atletismo (World Athletics). Es gracias a esta ya considerable cantidad de datos que se 
+      realizan estas visualizaciones coordinadas e interactivas que permiten filtrar la cantidad de datos (mediante click en el primer gráfico),
+      agruparlos y seleccionarlos para identificar tendencias temporales, geográficas y de distribución.
+
+    </p>
+    <div class="content" id="vis-container">
+
+    </div>
+    <p>Agrupar por: </p>
+    <button class="boton" id="country">País</button>
+    <button class="boton" id="decada">Decada</button>
+    <button class="boton" id="reset">Reset</button>
+    <div class="content" id="vis-container2">
+
+    </div>
+    <script src="main.js"></script>
+    <footer>Elaborado por Juan José Aubele León</footer>
+  </body>
+
+</html>

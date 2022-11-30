@@ -1,0 +1,40 @@
+#principal {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
+
+body {
+    margin: 25px;
+}
+
+#vis-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#vis-container2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.atleta:hover {
+    opacity: 0.5;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+  cursor: crosshair;
+}
+  
+.focus circle {
+  fill: #4682b4;
+}
+.focus {
+  z-index: 20;
+}

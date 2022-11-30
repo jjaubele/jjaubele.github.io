@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <meta charset="utf-8">
+    <title>Informe Examen IIC2026</title>
+    <link rel="shortcut icon" href="#" />
+    <link href="css/InformeStyle.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+      <h1>Informe</h1>
+      <p class=sh1>Examen | IIC2026 - Visualización de Información</p>
+      <p class=sh1>Noviembre 2022</p>
+
+
+      <h2>Primer nivel: Caracterización de dominio</h2>
+      <h3>Contexto de los datos</h3>
+      <p>
+        Correr una milla(1609m) en menos de 4 minutos, cada vuelta a la pista de atletismo en algo menos de 1 minuto,
+        es una proeza que durante decadas se consideró imposible. Sin embargo, en 1954 Roger Bannister, despues de miles
+        de intentos de quienes le precedieron, logró romper esta mítica barrera con un crono de 3:59.4 (<a target="_blank" href="https://www.youtube.com/watch?v=wTXoTnp_5sI">video</a>). Desde entonces los 
+        registros no han hecho más que mejorar, y en la actualidad el récord mundial se encuentra en 3:43.13, logrado por
+        Hichaam El Guerrouj en 1999. Al día de hoy 1459 personas han logrado superar esta marca según los registros de 
+        la federación internacional de atletismo (World Athletics) y todos estos se encuentran disponibles en su página web
+        <a target="_blank" href="https://worldathletics.org/records/all-time-toplists/middle-long/one-mile/outdoor/men/senior?regionType=world&page=1&bestResultsOnly=true&firstDay=1899-12-31&lastDay=2022-11-26">aquí</a>.
+      </p>
+      <p>
+        El dataset a utilizar corresponde a <span class=code>Men's_mile.csv</span>.
+        Este fue recolectado de la página web mediante un scraper y el preprocesamiento que requirió fue
+        corregir unas fechas de nacimiento vacías y agregar una columna con los tiempos en segundos.
+      </p>
+      <p>
+        El dataset contiene la mejor marca obtenida por cada uno de estos atletas, su nombre, país, fecha de nacimiento,
+        fecha de la competición, lugar de la competición, posición en la compertición y lugar en el ranking.
+      </p>
+      <h3>Usuario objetivo</h3>
+      <p>
+        El usuario objetivo de esta visualización es un aficionado al atletismo que quiere conocer más sobre los mejores
+        atletas de la historia de esta disciplina, saber cuáles son los mejores tiempos, cuáles son los mejores países, saber 
+        como han ido evolucionando las marcas en el tiempo, etc.
+      </p>
+      <p>
+        La herramienta busca ser una forma de explorar los datos mencionados arriba de una manera más intuitiva e 
+        interactiva de manera de cautivar la curiosidad del usuario. Intenta ser principalmente recreacional. Aunque 
+        también puede ser de utilidad para alguien más ligado laboralmente al area, pues conocer tendencias en la distribución de los
+        datos es muy relevante para determinar marcas mínimas de clasificación a campeonatos, para el otorgamiento de cupos o premios,
+        para la busqueda de futuros talentos, entre otros.
+      </p>
+
+      <h2>Segundo nivel: Abstracción de datos y tareas</h2>
+      <h3>Abstracción de tareas</h3>
+      <ul>
+        <li>
+          <span class="mono bold">Primera tarea principal:</span> 
+          Identificar la distribución de los datos. Visualizar que tan drásticamente disminuye la tasa de éxito
+          de los atletas al aumentar el rendimiento.
+        </li>
+        <li>
+          <span class="mono bold">Segunda tarea principal:</span>
+          Observar tendencias geográficas o espaciales. Poder Identificar paises potencias en la actividad.
+        <li>
+          <span class="mono bold">Tercera tarea principal:</span> 
+          Evaluar evolución temporal. Ver como han cambiado las marcas y cantidades de
+          consecución de este logro a lo largo del tiempo.
+
+        </li>
+      </ul>
+
+      <h3>Abstracción de datos</h3>
+      <p>
+        El dataset utilizado corresponde a un tipo de dataset tabular, los datos singulares 
+        que presenta son los siguientes:
+      </p>
+      <ul>
+        <li>
+          <span class="bold">Atleta (Ítem):</span> 
+          Correspodiente a una fila del dataset.
+        </li>
+        <li>
+          <span class="bold">Atributos:</span> Correspondientes a características
+          asociadas al atleta.
+        </li>
+      </ul>
+      <p>
+        Los atributos presentes en el dataset son:
+      </p>
+      <ol>
+        <li>
+          <span class="bold mono">Rank</span>
+          <div>Número correspodiente a la posición histórica de la marca del atleta.</div>
+          <ul class="atrr">
+            <li>
+              Atributo ordenado, cuantitativo y discreto. Secuencial de tipo valor.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="bold mono">Mark</span>
+          <div>Tiempo correspodiente a la mejor marca del atleta en la milla.</div>
+          <ul class="atrr">
+            <li>
+              Atributo ordenado, cuantitativo y continuo. Secuencial de tipo valor.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="bold mono">Competitor</span>
+          <div>Nombre del atleta.</div>
+          <ul class="atrr">
+            <li>
+              Atributo categórico de tipo llave.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="bold mono">DateOfBirth</span>
+          <div>Correspodiente a la fecha de nacimiento del atleta en formato dd/mm/yyyy.</div>
+          <ul class="atrr">
+            <li>
+              Atributo ordenado, cuantitativo y discreto. Secuencial de tipo valor.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="bold mono">Date</span>
+          <div>Correspodiente a la fecha de realización de la marca del atleta en formato dd/mm/yyyy</div>
+          <ul class="atrr">
+            <li>
+              Atributo ordenado, cuantitativo y discreto. Secuencial de tipo valor.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="bold mono">Nat</span>
+          <div>
+            Correspodiente a la nacionalidad del atleta.
+          </div>
+          <ul class="atrr">
+            <li>
+              Atributo categórico de tipo valor.
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>Tercer nivel: Codificación visual y de interacción</h2>
+  </body>
+</html>
